@@ -1,7 +1,8 @@
 <launch>
+	
 	<!-- speech synthesis -->
 	<rosparam command="load" file="$(find speech_synthesis)/yaml/speech_synthesis.yaml" />
-    <node pkg="speech_synthesis" type="tts_server.py" name="speech_synthesis" respawn="true" output="screen"/>
+	<node pkg="speech_synthesis" type="tts_server.py" name="speech_synthesis" respawn="true" output="screen"/>
 
     <!-- vision -->
     <!--  <node name="face_detect" pkg="vision_service" type="face_detector.py" output="screen" />
@@ -9,6 +10,9 @@
 
 	<!-- speech recognition -->
 	<node name="speech_recognize" pkg="roboy_speech_recognition" type="stt_server.py" output="screen" />
+
+	<!-- intents classification -->
+	<node name="roboy_intents_classification" pkg="roboy_intents_classification" type="detect_intent.py" respawn="true" output="screen" />
 
 	<!-- generative NLP -->
 	<!-- <param name="seq2seq/dataset_dir"  value="$(find roboy_generative_nlp)/include/Datasets/twitter/processed" type="str"/>
@@ -25,7 +29,7 @@
 	<!-- <node name="move" pkg="roboy_move" type="move.py" respawn="true" output="screen" /> -->
 
 	<!-- face --> 
-	<node name="unity_face" pkg="roboy_face" type="unity_face.py" respawn="true" output="screen" />
+	<!-- <node name="unity_face" pkg="roboy_face" type="unity_face.py" respawn="true" output="screen" /> -->
 
 
 	<!-- rosbridge_websocket -->
@@ -35,6 +39,7 @@
 	<include file="$(find rosbridge_server)/launch/rosbridge_tcp.launch"> 
      <arg name="port" value="9091"/>
 	</include>
+
 
 	
 </launch>
