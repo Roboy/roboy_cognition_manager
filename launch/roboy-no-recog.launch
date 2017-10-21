@@ -9,7 +9,7 @@
 	<node name="face_recognize" pkg="vision_service" type="face_recognizer.py" output="screen" /> -->
 
 	<!-- speech recognition -->
-	<node name="speech_recognize" pkg="roboy_speech_recognition" type="stt_server.py" output="screen" />
+	<!-- <node name="speech_recognize" pkg="roboy_speech_recognition" type="stt_server.py" output="screen" /> -->
 
 	<!-- intents classification -->
 	<!-- <node name="roboy_intents_classification" pkg="roboy_intents_classification" type="detect_intent.py" respawn="true" output="screen" /> -->
