@@ -1,8 +1,8 @@
 <launch>
 	
 	<!-- speech synthesis -->
-	<rosparam command="load" file="$(find speech_synthesis)/yaml/speech_synthesis.yaml" />
-	<node pkg="speech_synthesis" type="tts_server.py" name="speech_synthesis" respawn="true" output="screen"/>
+<!-- 	<rosparam command="load" file="$(find speech_synthesis)/yaml/speech_synthesis.yaml" />
+	<node pkg="speech_synthesis" type="tts_server.py" name="speech_synthesis" respawn="true" output="screen"/> -->
 
     <!-- vision -->
     <!--  <node name="face_detect" pkg="vision_service" type="face_detector.py" output="screen" />
@@ -36,9 +36,17 @@
 	<node name="rosbridge" pkg="rosbridge_server" type="rosbridge_websocket" />
 
 	<!-- rosbridge_tcpsocket -->
-	<include file="$(find rosbridge_server)/launch/rosbridge_tcp.launch"> 
-     <arg name="port" value="9091"/>
-	</include>
+<!-- 	 <group name="wg">
+		<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"> 
+	     <arg name="port" value="9999"/>
+	     <arg name="ssl" value="false" />
+		</include>
+ -->
+		<!-- rosbridge_tcpsocket -->
+		<include file="$(find rosbridge_server)/launch/rosbridge_tcp.launch"> 
+	     <arg name="port" value="9091"/>
+		</include>
+	<!-- </group> -->
 
 
 	
