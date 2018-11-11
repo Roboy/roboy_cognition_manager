@@ -3,8 +3,8 @@
 	<!-- speech synthesis -->
 	<!-- <node pkg="speech_synthesis" type="tts_server.py" name="speech_synthesis" respawn="true" output="screen"/>
 	<rosparam command="load" file="$(find speech_synthesis)/yaml/speech_synthesis.yaml" /> -->
-	<include file="$(find speech_synthesis)/launch/speech_synthesis.launch">\
-	</include>
+	<!-- <include file="$(find speech_synthesis)/launch/speech_synthesis.launch">\
+	</include> -->
 
     <!-- vision -->
     <!--  <node name="face_detect" pkg="vision_service" type="face_detector.py" output="screen" />
